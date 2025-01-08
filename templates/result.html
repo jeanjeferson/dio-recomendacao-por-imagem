@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados da Busca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .image-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+        }
+        .image-card img {
+            max-width: 200px;
+            height: auto;
+        }
+        .similarity-score {
+            color: #666;
+            font-size: 14px;
+        }
+        .back-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+        .original-image {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultados da Busca por Similaridade</h1>
+    
+    <div class="original-image">
+        <h2>Imagem Original</h2>
+        <img src="{{ url_for('static', filename='uploads/' + original_image) }}" alt="Imagem Original" style="max-width: 300px;">
+    </div>
+
+    <h2>Imagens Similares Encontradas</h2>
+    <div class="image-container">
+        {% for image, similarity in recommendations %}
+        <div class="image-card">
+            <img src="{{ url_for('static', filename='database/' + image) }}" alt="Imagem Similar">
+            <p class="similarity-score">Similaridade: {{ "%.2f"|format(similarity * 100) }}%</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('upload_image') }}" class="back-btn">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Upload Image</title>
+  </head>
+  <body>
+    <h1>Upload an Image for Recommendations</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*" />
+      <input type="submit" value="Upload" />
+    </form>
+  </body>
+</html>
+
+- *result.html* html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Recommendations</title>
+  </head>
+  <body>
+    <h1>Recommended Products</h1>
+    <ul>
+      {% for label in recommendations %}
+      <li>{{ label }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
