@@ -1,14 +1,16 @@
-# Sistema de Recomendação por Imagens
+# 🖼️ Sistema de Recomendação por Imagens
 
-Sistema que utiliza deep learning para recomendar imagens similares baseado em uma imagem de consulta.
+✨ Sistema que utiliza deep learning para recomendar imagens similares baseado em uma imagem de consulta.
 
-## Configuração com Docker
+---
 
-### Pré-requisitos
-- Docker
-- Docker Compose
+## 🐳 Configuração com Docker
 
-### Executando o Sistema
+### 📋 Pré-requisitos
+- Docker 🐋
+- Docker Compose 🧩
+
+### 🚀 Executando o Sistema
 
 1. Clone o repositório:
 ```bash
@@ -23,13 +25,15 @@ docker-compose up --build
 
 3. Acesse o sistema em: http://localhost
 
-## Configuração Local (Sem Docker)
+---
 
-### Pré-requisitos
-- Python 3.12
-- pip
+## 💻 Configuração Local (Sem Docker)
 
-### Instalação
+### 📋 Pré-requisitos
+- Python 3.12 🐍
+- pip 📦
+
+### ⚙️ Instalação
 
 1. Instale as dependências:
 ```bash
@@ -43,35 +47,49 @@ python run.py
 
 3. Acesse o sistema em: http://localhost:5000
 
-## Uso
+---
 
-1. **Upload da Base de Dados**
+## 🎮 Como Usar
+
+1. **📤 Upload da Base de Dados**
    - Clique em "Processar Base de Dados"
    - Selecione o arquivo ZIP contendo as imagens originais
-   - Aguarde o processamento
+   - Aguarde o processamento ⏳
 
-2. **Buscar Imagens Similares**
+2. **🔍 Buscar Imagens Similares**
    - Clique em "Buscar Similares"
    - Selecione o arquivo ZIP contendo as imagens de teste
-   - O sistema mostrará as imagens mais similares encontradas
+   - O sistema mostrará as imagens mais similares encontradas 🎉
 
-## Estrutura de Diretórios
+---
 
-- `/app` - Código fonte da aplicação Flask
-- `/models` - Modelos e índices gerados
-- `/uploads` - Arquivos temporários de upload
-- `/temp` - Arquivos temporários de processamento
-- `/static` - Arquivos estáticos e imagens processadas
+## 📂 Estrutura de Diretórios
 
-## Notas
+```
+📁 /app        → Código fonte da aplicação Flask
+📁 /models     → Modelos e índices gerados
+📁 /uploads    → Arquivos temporários de upload
+📁 /temp       → Arquivos temporários de processamento
+📁 /static     → Arquivos estáticos e imagens processadas
+```
 
-- O sistema suporta uploads de arquivos grandes (até 500MB)
-- Formatos suportados: JPG, JPEG, PNG
-- As imagens são processadas usando o modelo ResNet50
-- A similaridade é calculada usando o algoritmo Annoy
+---
 
-## Solução de Problemas
+## 📝 Notas Importantes
+
+- ✅ Suporta uploads de até 500MB
+- 🖼️ Formatos suportados: JPG, JPEG, PNG
+- 🤖 Modelo utilizado: ResNet50
+- 🔢 Algoritmo de similaridade: Annoy
+
+---
+
+## 🛠️ Solução de Problemas
 
 Se encontrar o erro "Request Entity Too Large":
-1. Use a versão Docker que já está configurada para lidar com arquivos grandes
-2. Ou ajuste as configurações do seu servidor web para aumentar o limite de upload
+1. Use a versão Docker 🐋 que já está configurada para lidar com arquivos grandes
+2. Ou ajuste as configurações do seu servidor web para aumentar o limite de upload ⬆️
+
+---
+
+Feito com ❤️ por [Seu Nome]
