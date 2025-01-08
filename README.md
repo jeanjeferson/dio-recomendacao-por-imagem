@@ -1,95 +1,95 @@
-# 🖼️ Sistema de Recomendação por Imagens
+# 🖼️ Sistema de Recomendação de Imagens
 
-✨ Sistema que utiliza deep learning para recomendar imagens similares baseado em uma imagem de consulta.
+Bem-vindo ao nosso sistema de recomendação de imagens! 👋 Este é um sistema inteligente que usa aprendizado profundo para encontrar imagens semelhantes à que você enviar. Vamos configurar? 🚀
 
----
+## 📋 Pré-requisitos
 
-## 🐳 Configuração com Docker
+Antes de começar, você vai precisar de:
 
-### 📋 Pré-requisitos
-- Docker 🐋
-- Docker Compose 🧩
+- Python 3.7 ou superior 🐍
+- Gerenciador de pacotes pip 📦
 
-### 🚀 Executando o Sistema
+## 🛠️ Instalação
 
-1. Clone o repositório:
-```bash
-git clone <repository-url>
-cd dio-recomendacao-por-imagem
-```
+Vamos configurar o ambiente passo a passo:
 
-2. Construa e inicie os containers:
-```bash
-docker-compose up --build
-```
+1. **Clone o repositório**  
+   Primeiro, faça o download do projeto:
+   ```bash
+   git clone https://github.com/seu-usuario/recomendacao-imagem.git
+   cd recomendacao-imagem
+   ```
 
-3. Acesse o sistema em: http://localhost
+2. **Crie um ambiente virtual**  
+   Vamos isolar as dependências do projeto:
+   ```bash
+   python -m venv venv
+   # No Windows:
+   venv\Scripts\activate
+   # No Mac/Linux:
+   source venv/bin/activate
+   ```
 
----
+3. **Instale as dependências**  
+   Agora, instale tudo que precisamos:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 💻 Configuração Local (Sem Docker)
+## 📂 Estrutura do Projeto
 
-### 📋 Pré-requisitos
-- Python 3.12 🐍
-- pip 📦
-
-### ⚙️ Instalação
-
-1. Instale as dependências:
-```bash
-pip install -r requirements.txt
-```
-
-2. Execute o servidor:
-```bash
-python run.py
-```
-
-3. Acesse o sistema em: http://localhost:5000
-
----
-
-## 🎮 Como Usar
-
-1. **📤 Upload da Base de Dados**
-   - Clique em "Processar Base de Dados"
-   - Selecione o arquivo ZIP contendo as imagens originais
-   - Aguarde o processamento ⏳
-
-2. **🔍 Buscar Imagens Similares**
-   - Clique em "Buscar Similares"
-   - Selecione o arquivo ZIP contendo as imagens de teste
-   - O sistema mostrará as imagens mais similares encontradas 🎉
-
----
-
-## 📂 Estrutura de Diretórios
+Aqui está o que cada pasta contém:
 
 ```
-📁 /app        → Código fonte da aplicação Flask
-📁 /models     → Modelos e índices gerados
-📁 /uploads    → Arquivos temporários de upload
-📁 /temp       → Arquivos temporários de processamento
-📁 /static     → Arquivos estáticos e imagens processadas
+📁 static/
+   ├── 📁 database/    # Aqui ficam as imagens para recomendação
+   └── 📁 uploads/     # Onde as imagens enviadas são armazenadas
+📁 templates/          # Templates HTML da interface web
+📄 image_features.csv  # Características pré-calculadas das imagens
+📄 recomendacao.py     # O coração do sistema
 ```
 
----
+## 🚀 Executando o Sistema
 
-## 📝 Notas Importantes
+Vamos colocar o sistema para funcionar!
 
-- ✅ Suporta uploads de até 500MB
-- 🖼️ Formatos suportados: JPG, JPEG, PNG
-- 🤖 Modelo utilizado: ResNet50
-- 🔢 Algoritmo de similaridade: Annoy
+1. **Prepare as imagens**  
+   Coloque suas imagens na pasta `static/database/`
 
----
+2. **Inicie o servidor**  
+   No terminal, execute:
+   ```bash
+   python recomendacao.py
+   ```
 
-## 🛠️ Solução de Problemas
+3. **Acesse o sistema**  
+   Abra seu navegador e visite:  
+   http://localhost:5000
 
-Se encontrar o erro "Request Entity Too Large":
-1. Use a versão Docker 🐋 que já está configurada para lidar com arquivos grandes
-2. Ou ajuste as configurações do seu servidor web para aumentar o limite de upload ⬆️
+## 🖥️ Como Usar
 
----
+É super simples! 😊
 
-Feito com ❤️ por [Seu Nome]
+1. Acesse http://localhost:5000
+2. Escolha uma imagem usando o seletor de arquivos
+3. O sistema mostrará as imagens mais parecidas da base de dados
+
+## 📦 Dependências
+
+Estes são os pacotes Python que usamos:
+
+- Flask 🌐
+- TensorFlow 🧠
+- NumPy 🔢
+- Pandas 🐼
+- Scikit-learn 📊
+- OpenCV 📷
+- Werkzeug 🛠️
+
+## ⚠️ Importante!
+
+- As características das imagens estão pré-calculadas no arquivo `image_features.csv`
+- Formatos suportados: JPG, JPEG, PNG
+- Tamanho máximo de upload: 16MB
+
+Pronto para começar? Vamos lá! 🎉
